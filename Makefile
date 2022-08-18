@@ -1,6 +1,6 @@
 NAME=etcdtool
 BUILDDIR=build
-SRCDIR=github.com/mickep76/$(NAME)
+SRCDIR=github.com/v-kamerdinerov/$(NAME)
 VERSION:=$(shell git describe --abbrev=0 --tags)
 RELEASE:=$(shell date -u +%Y%m%d%H%M)
 ARCH:=$(shell uname -p)
@@ -18,13 +18,11 @@ darwin: build
 	mkdir release || true
 	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.darwin.x86_64
 
-rpm:
-	docker pull mickep76/centos-golang:latest
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest make build-rpm
+rpm: build-docker-image
+	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-rpm
 
-binary:
-	docker pull mickep76/centos-golang:latest
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) mickep76/centos-golang:latest make build-binary
+binary: build-docker-image
+	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-binary
 	mkdir release || true
 	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.linux.x86_64
 
@@ -42,3 +40,6 @@ build-rpm: build
 	rpmbuild -vv -bb --target="${ARCH}" --clean --define "_topdir $$(pwd)/${BUILDDIR}" ${BUILDDIR}/SPECS/${NAME}.spec
 	mkdir release || true
 	mv ${BUILDDIR}/RPMS/${ARCH}/*.rpm release
+
+build-docker-image:
+    docker build -t centos-golang .
