@@ -24,7 +24,7 @@ rpm: build-docker-image
 binary: build-docker-image
 	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-binary
 	mkdir release || true
-	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.linux.x86_64
+	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.linux.${ARCH}
 
 set-version:
 	sed -i .tmp "s/const Version =.*/const Version = \"${VERSION}\"/" version.go
