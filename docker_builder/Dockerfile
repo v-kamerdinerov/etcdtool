@@ -3,7 +3,9 @@ FROM centos:7
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ENV LANG=en_AU.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Disable the mirrorlist because god damn are they useless.
 RUN sed -i 's/^mirrorlist=/#mirrorlist=/' /etc/yum.repos.d/CentOS-Base.repo \
