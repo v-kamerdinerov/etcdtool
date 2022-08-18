@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/codegangsta/cli"
-	"github.com/mickep76/iodatafmt"
+	"github.com/novaez/iodatafmt"
 )
 
 // Etcdtool configuration struct.

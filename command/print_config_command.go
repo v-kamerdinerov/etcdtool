@@ -2,7 +2,7 @@ package command
 
 import (
 	"github.com/codegangsta/cli"
-	"github.com/mickep76/iodatafmt"
+	"github.com/novaez/iodatafmt"
 )
 
 // NewPrintConfigCommand print configuration.
