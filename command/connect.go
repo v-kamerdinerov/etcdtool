@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/bgentry/speakeasy"
-	"github.com/codegangsta/cli"
+	"github.com/urfave/cli"
 	"github.com/etcd-io/etcd/client"
 	"github.com/etcd-io/etcd/pkg/transport"
 	"golang.org/x/net/context"

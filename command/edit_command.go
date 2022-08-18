@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/codegangsta/cli"
+	"github.com/urfave/cli"
 	"github.com/etcd-io/etcd/client"
 	"github.com/novaez/iodatafmt"
 	"golang.org/x/net/context"

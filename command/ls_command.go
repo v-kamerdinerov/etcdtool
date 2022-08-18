@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/codegangsta/cli"
+	"github.com/urfave/cli"
 	"github.com/etcd-io/etcd/client"
 	"github.com/mickep76/etcdmap"
 )
