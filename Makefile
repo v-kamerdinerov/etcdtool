@@ -12,6 +12,10 @@ clean:
 
 build build-binary: clean
 	mkdir ${BUILDDIR} || true
+	go clean -modcache
+	#go get -u ./...
+	go get -d ./...
+	go get -u ./...
 	go build -o ${BUILDDIR}/${NAME}
 
 darwin: build
@@ -19,10 +23,10 @@ darwin: build
 	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.darwin.x86_64
 
 rpm: build-docker-image
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-rpm
+	docker run --rm --network=host -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-rpm
 
 binary: build-docker-image
-	docker run --rm -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-binary
+	docker run --rm --network=host -it -v "$$PWD":/go/src/$(SRCDIR) -w /go/src/$(SRCDIR) centos-golang make build-binary
 	mkdir release || true
 	mv ${BUILDDIR}/${NAME} release/${NAME}-${VERSION}-${RELEASE}.linux.${ARCH}
 
@@ -42,4 +46,4 @@ build-rpm: build
 	mv ${BUILDDIR}/RPMS/${ARCH}/*.rpm release
 
 build-docker-image:
-    docker build -t centos-golang .
+	docker build --network=host -t centos-golang -f docker_builder/Dockerfile .

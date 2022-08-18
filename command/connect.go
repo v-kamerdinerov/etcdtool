@@ -8,8 +8,8 @@ import (
 
 	"github.com/bgentry/speakeasy"
 	"github.com/codegangsta/cli"
-	"github.com/coreos/etcd/client"
-	"github.com/coreos/etcd/pkg/transport"
+	"github.com/etcd-io/etcd/client"
+	"github.com/etcd-io/etcd/pkg/transport"
 	"golang.org/x/net/context"
 )
 

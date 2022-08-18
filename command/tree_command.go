@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/codegangsta/cli"
-	"github.com/coreos/etcd/client"
+	"github.com/etcd-io/etcd/client"
 	"golang.org/x/net/context"
 )
 

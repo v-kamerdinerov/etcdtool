@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/codegangsta/cli"
-	"github.com/coreos/etcd/client"
+	"github.com/etcd-io/etcd/client"
 	"github.com/mickep76/etcdmap"
 	"github.com/novaez/iodatafmt"
 	"golang.org/x/net/context"
