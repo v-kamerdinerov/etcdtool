@@ -12,7 +12,7 @@ Export/Import/Edit etcd directory as JSON/YAML/TOML and validate directory using
 # Build
 
 ```bash
-git clone https://github.com/mickep76/etcdtool.git
+git clone https://github.com/v-kamerdinerov/etcdtool.git
 cd etcdtool
 make
 ```
@@ -22,7 +22,7 @@ make
 Make sure you have Docker configured.
 
 ```bash
-git clone https://github.com/mickep76/etcdtool.git
+git clone https://github.com/v-kamerdinerov/etcdtool.git
 cd etcdtool
 make rpm
 ```

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/urfave/cli"
-	"github.com/mickep76/etcdtool/command"
+	"github.com/v-kamerdinerov/etcdtool/command"
 )
 
 type Config struct {

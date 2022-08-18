@@ -8,7 +8,7 @@ EAPI=5
 inherit user git-r3
 
 DESCRIPTION="Export/Import/Edit etcd directory as JSON/YAML/TOML and validate directory using JSON schema"
-HOMEPAGE="https://github.com/mickep76/etcdtool.git"
+HOMEPAGE="https://github.com/v-kamerdinerov/etcdtool.git"
 SRC_URI=""
 
 LICENSE="Apache-2.0"
@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND="dev-lang/go"
 
-EGIT_REPO_URI="https://github.com/mickep76/etcdtool.git"
+EGIT_REPO_URI="https://github.com/v-kamerdinerov/etcdtool.git"
 EGIT_COMMIT="${PV}"
 
 GOPATH="${WORKDIR}/etcdtool-${PV}"
