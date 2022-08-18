@@ -2,10 +2,10 @@ package command
 
 import (
 	"strings"
-	"github.com/urfave/cli"
-	"github.com/etcd-io/etcd/client"
+	"github.com/codegangsta/cli"
+	"github.com/coreos/etcd/client"
 	"github.com/mickep76/etcdmap"
-	"github.com/novaez/iodatafmt"
+	"github.com/mickep76/iodatafmt"
 	"strconv"
 	"sort"
 	"regexp"

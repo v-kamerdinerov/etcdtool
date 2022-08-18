@@ -6,9 +6,9 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/urfave/cli"
-	"github.com/etcd-io/etcd/client"
-	"github.com/novaez/iodatafmt"
+	"github.com/codegangsta/cli"
+	"github.com/coreos/etcd/client"
+	"github.com/mickep76/iodatafmt"
 	"golang.org/x/net/context"
 )
 

@@ -5,8 +5,8 @@ import (
 	"os/user"
 	"time"
 
-	"github.com/urfave/cli"
-	"github.com/novaez/iodatafmt"
+	"github.com/codegangsta/cli"
+	"github.com/mickep76/iodatafmt"
 )
 
 // Etcdtool configuration struct.

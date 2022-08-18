@@ -1,8 +1,8 @@
 package command
 
 import (
-	"github.com/urfave/cli"
-	"github.com/novaez/iodatafmt"
+	"github.com/codegangsta/cli"
+	"github.com/mickep76/iodatafmt"
 )
 
 // NewPrintConfigCommand print configuration.
